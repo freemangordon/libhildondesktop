@@ -102,18 +102,23 @@ example_icon_status_menu_item_init (ExampleIconStatusMenuItem *menu_item)
   gtk_container_set_border_width (GTK_CONTAINER (button), 3);
   g_signal_connect_after (G_OBJECT (button), "clicked",
                           G_CALLBACK (button_clicked_cb), menu_item);
-  hbox = gtk_hbox_new (FALSE, 8);
-  vbox1 = gtk_vbox_new (FALSE, 0);
-  vbox2 = gtk_vbox_new (FALSE, 0);
+  hbox = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 8);
+  gtk_box_set_homogeneous(GTK_BOX(hbox), FALSE);
+  vbox1 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+  gtk_box_set_homogeneous(GTK_BOX(vbox1), FALSE);
+  vbox2 = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+  gtk_box_set_homogeneous(GTK_BOX(vbox2), FALSE);
   image = gtk_image_new_from_file (HILDON_DATA_DIR "/example-icon.png");
   label1 = gtk_label_new ("Wireless Connection");
-  gtk_misc_set_alignment (GTK_MISC (label1), 0.0, 0.5);
+  gtk_widget_set_halign(label1, GTK_ALIGN_START);
+  gtk_widget_set_valign(label1, GTK_ALIGN_CENTER);
   attr_list = pango_attr_list_new ();
   pango_attr_list_insert (attr_list, pango_attr_size_new_absolute (PANGO_SCALE * 24));
   gtk_label_set_attributes (GTK_LABEL (label1), attr_list);
   pango_attr_list_unref (attr_list);
   label2 = gtk_label_new ("TheWayOut");
-  gtk_misc_set_alignment (GTK_MISC (label2), 0.0, 0.5);
+  gtk_widget_set_halign(label2, GTK_ALIGN_START);
+  gtk_widget_set_valign(label2, GTK_ALIGN_CENTER);
   attr_list = pango_attr_list_new ();
   pango_attr_list_insert (attr_list, pango_attr_size_new_absolute (PANGO_SCALE * 18));
   gtk_label_set_attributes (GTK_LABEL (label2), attr_list);

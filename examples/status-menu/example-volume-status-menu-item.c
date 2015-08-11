@@ -53,14 +53,15 @@ example_volume_status_menu_item_init (ExampleVolumeStatusMenuItem *menu_item)
 {
   GtkWidget *box, *image, *scale;
 
-  box = gtk_hbox_new (FALSE, 3);
+  box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 3);
+  gtk_box_set_homogeneous(GTK_BOX(box), FALSE);
   gtk_container_set_border_width (GTK_CONTAINER (box), 11);
   gtk_widget_show (box);
 
   image = gtk_image_new_from_file (HILDON_DATA_DIR "/example-icon.png");
   gtk_widget_show (image);
 
-  scale = gtk_hscale_new_with_range (0, 100, 5);
+  scale = gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL, 0, 100, 5);
   gtk_scale_set_draw_value (GTK_SCALE (scale), FALSE);
   gtk_widget_show (scale);
 

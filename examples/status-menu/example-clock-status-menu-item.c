@@ -77,7 +77,7 @@ example_clock_status_menu_item_timeout_cb (ExampleClockStatusMenuItem *menu_item
   t = time (NULL);
   tmp = localtime (&t);
 
-  GDK_THREADS_ENTER ();
+  //GDK_THREADS_ENTER ();
 
   strftime (time_str, sizeof (time_str), "%d.%m.%Y %H:%M:%S", tmp);
 
@@ -87,7 +87,7 @@ example_clock_status_menu_item_timeout_cb (ExampleClockStatusMenuItem *menu_item
 
   gtk_label_set_markup (GTK_LABEL (menu_item->priv->status_area_label), time_str);
 
-  GDK_THREADS_LEAVE ();
+  //GDK_THREADS_LEAVE ();
 
   return TRUE;
 }
@@ -106,7 +106,8 @@ example_clock_status_menu_item_init (ExampleClockStatusMenuItem *menu_item)
   gtk_container_add (GTK_CONTAINER (menu_item), menu_item->priv->label);
 
   /* Set Status Area widget */
-  status_area_box = gtk_hbox_new (FALSE, 0);
+  status_area_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+  gtk_box_set_homogeneous(GTK_BOX(status_area_box), FALSE);
   gtk_widget_show (status_area_box);
 
   menu_item->priv->status_area_label = gtk_label_new ("...");
