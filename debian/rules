@@ -15,9 +15,10 @@ ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
 	CFLAGS+= -ggdb -DDEBUG
 endif
 
+CFLAGS+= -Wall
 DEB_CONFIGURE_EXTRA_FLAGS := --enable-gtk-doc
 
-DEB_DH_MAKESHLIBS_ARGS_libhildondesktop1-examples := --noscripts
+DEB_DH_MAKESHLIBS_ARGS_libhildondesktop3-examples := --noscripts
 
 DEB_DH_INSTALLCHANGELOGS_ARGS=--no-act
 DEB_DH_INSTALLDOCS_ARGS=--no-act

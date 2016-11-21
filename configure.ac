@@ -11,7 +11,7 @@ AM_MAINTAINER_MODE
 AS_VERSION
 
 #define API_VERSION_MAJOR
-API_VERSION_MAJOR=1
+API_VERSION_MAJOR=3
 AC_SUBST(API_VERSION_MAJOR)
 
 # set the libtool versioning
@@ -88,9 +88,9 @@ AC_SUBST(CFLAGS)
 # AC_DEFINE(GETTEXT_PACKAGE, ["libhildondesktop"], [Package name for gettext])
 
 PKG_CHECK_MODULES(HILDON,
-                  [hildon-1], 
-                  [AC_DEFINE(HAVE_LIBHILDON, [], [Whether libhildon-1 is present on the system])], 
-                  [PKG_CHECK_MODULES(HILDON, hildon-1 >= 2.1.0)])
+                  [hildon-3], 
+                  [AC_DEFINE(HAVE_LIBHILDON, [], [Whether libhildon-3 is present on the system])], 
+                  [PKG_CHECK_MODULES(HILDON, hildon-3 >= 2.1.0)])
 
 AC_SUBST(HILDON_LIBS)
 AC_SUBST(HILDON_CFLAGS)

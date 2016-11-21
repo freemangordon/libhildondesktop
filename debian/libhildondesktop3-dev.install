@@ -1,0 +1,4 @@
+debian/tmp/usr/lib/libhildondesktop-3.so
+debian/tmp/usr/lib/libhildondesktop-3.a
+debian/tmp/usr/lib/pkgconfig/libhildondesktop-3.pc
+debian/tmp/usr/include/libhildondesktop-3
