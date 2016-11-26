@@ -8,7 +8,7 @@ Standards-Version: 3.8.0
 Package: libhildondesktop3-dev
 Section: libdevel
 Architecture: any
-Depends: libhildondesktop1 (= ${Source-Version}), libhildon3-dev (>= 2.1.0), libdbus-1-dev (>= 1.0.2)
+Depends: libhildondesktop3 (= ${Source-Version}), libhildon3-dev (>= 2.1.0), libdbus-1-dev (>= 1.0.2)
 Description: Hildon Desktop libraries development files
 
 Package: libhildondesktop3-doc
